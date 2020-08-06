@@ -1,0 +1,123 @@
+<html lang="en">
+<body>
+<!-- start RC-JS --><script type="text/javascript">
+    // RC-JS를 비동기로 로딩하는 Snippet 입니다.
+    (function () {function a(r,e,$){return e in r?Object.defineProperty(r,e,{"value":$,"enumerable":!0,"configurable":!0,"writable":!0}):r[e]=$,r}var j=function(e){return e.userAgent.toLowerCase()};var l=function(e){var r=e.userAgent;return"Netscape"===e.appName&&r.indexOf("trident")>-1||r.indexOf("msie")>-1||r.indexOf("edge")>-1};var k=function(e){return e.indexOf("msie")<0?0:parseInt(e.split("msie")[1],10)};var b="RAKE";var f="_$OPTIONS";var g="_$loaded";var i="_$cb";var c="_$RAKE_ENV";var h="_$SV";var d="_$RAKE_MODE";var m=function(e,t){var r=!(arguments.length>2&&arguments[2]!==undefined)||arguments[2],$={};for(var o in e)e.hasOwnProperty(o)&&($[o]=e[o]);for(var n in t)t.hasOwnProperty(n)&&(r?$[n]=t[n]:e[n]=t[n]);return r?$:e};var n="1.0",o="rake.bundle.js",p="rake.bundle-ie8.js",q="rake.bundle-ie.js",e=function(r,e){return{"init":function($){e[h]||(function(){var r,$=arguments.length>0&&arguments[0]!==undefined?arguments[0]:{};m(e,(a(r={},g,!1),a(r,f,$[f]||{}),a(r,d,$[d]||[]),a(r,c,$[c]||"LIVE"),a(r,h,n),a(r,i,function(){}),r),!1)}($),function(){if(!r.getElementById(b)){var $=r.createElement("script"),t=r.getElementsByTagName("script")[0];$.id=b,$.type="text/javascript",$.async=!0,$.src=function(r){var e="DEV"===r?"https://pg.rake.skplanet.com:8443/log/static/js/rake/new/current":"LIVE"===r?"https://rake.skplanet.com:8443/log/static/js/rake/new/current":"",$=window.navigator,t=$.appName,c=j($),n="".concat(e,"/").concat(o);if(l({"userAgent":c,"appName":t})){var i=k(c);8===i?n="".concat(e,"/").concat(p):i>8&&i<11&&(n="".concat(e,"/").concat(q))}return n}(e[c]),t.parentNode.insertBefore($,t)}}(),function(){if(!e[g])for(var r=["track","flush","create","remove","collect","autoTrack","setServerURL","setServerPort","excludeAutoProperties"],$=function($,t){var c=r[$];e[c]=function(){var r=Array.prototype.slice.call(arguments,0),$=[c];$=$.concat(r),e.push($)}},t=0,c=r.length;t<c;t++)$(t,c)}(),window[b]=e)}}}(document,window[b]||[]);window.snippet=e;})();
+
+    // Snippet 옵션 설정
+    snippet.init({
+        _$RAKE_ENV: 'DEV',
+        _$RAKE_MODE: ['DMP'],
+        _$OPTIONS: {
+            isBeacon: true,
+            isCookieSync: true,
+            nid: '제휴사 식별자',
+            uid: '제휴사 사용자 식별자'
+        }
+    });
+</script><!-- end RC-JS -->
+<!-- Shuttle 스크립트 로딩 -->
+<script src="./shuttle/DiRakeClientTestJsSentinelShuttle.js"></script>
+<script type="text/javascript">
+    const test = () => {
+        // Rake Instance 생성
+        RAKE.create({
+            instanceAlias: 'Instance 별칭',
+            token: 'Sentinel에서 발급받은 Token 값',
+            isDMP: true,
+            filters: [
+                { type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
+            ],
+            converters: [
+                // URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
+                { type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
+
+                // URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
+                { type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
+
+                // 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
+                { type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
+            ]
+        });
+
+        /*
+         * track() 테스트
+         */
+        // 전송할 Payload 생성
+        const shuttle = new DiRakeClientTestJsSentinelShuttle();
+        shuttle.setAction_id('view');
+        shuttle.setPage_id('49E-FF01');
+        const myPayload = shuttle.getImmutableJSONObject();
+
+        // Payload 전송
+        RAKE.track({
+            instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+            payload: myPayload,
+            timeoutAsMillis: 1000,
+            successCallback: function() { console.log('SUCCESS CALLBACK for Track') },
+            failureCallback: function() { console.log('FAILURE CALLBACK for Track') }
+        });
+
+
+        /*
+         * collect() + flush() 테스트
+         */
+        // 전송할 Payload 생성 및 적재 01
+        // const shuttle = new DiRakeClientTestJsSentinelShuttle(); // 앞에서 선언해서 주석 처리
+        shuttle.setAction_id('view');
+        shuttle.setPage_id('49E-FF01');
+
+        RAKE.collect({
+            instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+            payload: shuttle.getImmutableJSONObject()
+        });
+
+        // 전송할 Payload 생성 및 적재 02
+        shuttle.setAction_id('click');
+        shuttle.setPage_id('49E-FF02');
+
+        RAKE.collect({
+            instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+            payload: shuttle.getImmutableJSONObject()
+        });
+
+        // 전송
+        RAKE.flush({
+            instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+            timeoutAsMillis: 1000,
+            successCallback: function() { console.log('SUCCESS CALLBACK for Collect + Flush') },
+            failureCallback: function() { console.log('FAILURE CALLBACK for Collect + Flush') }
+        });
+    };
+    setTimeout(test, 1000);
+
+    const test_autoTrack = () => {
+        // Rake Instance 자동 생성 및 전송
+        RAKE.autoTrack({
+            instanceAlias: 'Instance 별칭',
+            token: 'Sentinel에서 발급받은 Token 값',
+            shuttle: DiRakeClientTestJsSentinelShuttle, // Shuttle 생성자 명
+            isDMP: true,
+            filters: [
+                { type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
+            ],
+            converters: [
+                // URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
+                { type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
+
+                // URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
+                { type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
+
+                // 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
+                { type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
+            ],
+            timeoutAsMillis: 1000,
+            successCallback: function() { console.log('SUCCESS CALLBACK for AutoTrack') },
+            failureCallback: function() { console.log('FAILURE CALLBACK for AutoTrack') }
+        });
+    };
+    // setTimeout(test_autoTrack, 1000);
+</script>
+<h1>RakeApp-Example</h1>
+</body>
+</html>
