@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    
     <meta charset="utf-8">
     <title>Home - Documentation</title>
-
-
+    
+    
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="styles/prettify.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
@@ -18,158 +18,129 @@
 </head>
 <body>
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger"/>
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
 <label for="nav-trigger" class="navicon-button x">
-    <div class="navicon"></div>
+  <div class="navicon"></div>
 </label>
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav>
-
-    <h2><a href="index.html">Home</a></h2>
-    <h3>Modules</h3>
-    <ul>
-        <li><a href="module-rake_Container.html">rake/Container</a>
-            <ul class='methods'>
-                <li data-type='method'><a href="module-rake_Container.html#~autoTrack">autoTrack</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~collect">collect</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~create">create</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~createInstance">createInstance</a></li>
-                <li data-type='method'><a
-                        href="module-rake_Container.html#~excludeAutoProperties">excludeAutoProperties</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~flush">flush</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~remove">remove</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~setServerPort">setServerPort</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~setServerURL">setServerURL</a></li>
-                <li data-type='method'><a href="module-rake_Container.html#~track">track</a></li>
-            </ul>
-        </li>
-    </ul>
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-rake_Container.html">rake/Container</a><ul class='methods'><li data-type='method'><a href="module-rake_Container.html#~autoTrack">autoTrack</a></li><li data-type='method'><a href="module-rake_Container.html#~collect">collect</a></li><li data-type='method'><a href="module-rake_Container.html#~create">create</a></li><li data-type='method'><a href="module-rake_Container.html#~createInstance">createInstance</a></li><li data-type='method'><a href="module-rake_Container.html#~excludeAutoProperties">excludeAutoProperties</a></li><li data-type='method'><a href="module-rake_Container.html#~flush">flush</a></li><li data-type='method'><a href="module-rake_Container.html#~remove">remove</a></li><li data-type='method'><a href="module-rake_Container.html#~setServerPort">setServerPort</a></li><li data-type='method'><a href="module-rake_Container.html#~setServerURL">setServerURL</a></li><li data-type='method'><a href="module-rake_Container.html#~track">track</a></li></ul></li></ul>
 </nav>
 
 <div id="main">
+    
+
+    
+
+
+
+    
 
 
     <section class="package">
-        <h3></h3>
+        <h3> </h3>		
     </section>
+
+
+
+
+
+
+
+
+
+    
+
 
 
     <section class="readme usertext">
         <article><p>이 문서는 rake-javascript v3.x.x 의 사용법에 대해서 설명합니다.
-            구 버전의 사용은 다음을 참고하세요.</p>
-            <ul>
-                <li>
-                    <a href="https://github.com/skpdi/rake-document/wiki/Z.-(Deprecated)-Rake-Web-v2.x-(%ED%95%9C%EA%B5%AD%EC%96%B4)">v2.x.x</a>
-                </li>
-                <li>
-                    <a href="https://github.com/skpdi/rake-document/wiki/Z.-(Deprecated)-Rake-Web-v1.x-(%ED%95%9C%EA%B5%AD%EC%96%B4)">v1.x.x</a>
-                </li>
-            </ul>
-            <h2>Basics</h2>
-            <p><strong>아래 내용을 꼭 읽기를 권장합니다.</strong></p>
-            <ul>
-                <li>rake-javascript(이하 RC-JS)는 Google Analytics(이하 GA)와 동일하게 비동기로 로딩되어 Page View 또는 Custom Format 로그를
-                    전송합니다.
-                </li>
-                <li>(<strong>중요</strong>) 사용자 환경 구분을 위해 <code>_$RAKE_ENV</code> 를 입력받습니다.</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>환경</th>
-                    <th style="text-align:center"><code>_$RAKE_ENV</code> 값</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>상용서버로 전송</td>
-                    <td style="text-align:center"><code>LIVE</code></td>
-                </tr>
-                <tr>
-                    <td>개발서버로 전송</td>
-                    <td style="text-align:center"><code>DEV</code></td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li><a href="https://github.com/skpdi/sentinel-document/wiki/Sentinel-Shuttle">Shuttle</a> 은 <a
-                        href="https://sentinel.skplanet.com:9091/">Sentinel</a> 에서 다운받아 사용합니다.
-                </li>
-                <li>(<strong>중요</strong>) <code>device_id</code>, <code>device_model</code> 값은 브라우저에서 얻기 불가능하거나 어려워 수집하지
-                    않습니다. (<a
-                            href="https://github.com/skpdi/rake-document/wiki/0.-Home-(%ED%95%9C%EA%B5%AD%EC%96%B4)#2-%EA%B5%AC%EA%B8%80-%EC%8B%9C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%96%B4%EB%96%A4-%ED%95%84%EB%93%9C%EB%93%A4%EC%9D%B4-%EC%9E%90%EB%8F%99%EC%88%98%EC%A7%91-%EC%BB%AC%EB%9F%BC%EC%9D%B8%EA%B0%80%EC%9A%94">플랫폼별
-                        자동수집필드</a>)
-                </li>
-            </ul>
-            <blockquote>
-                <p>WebView라면 Native와의 통신을 이용해 <code>device_id</code> 값을 가져오거나, 데이터를 Native로 넘겨 <em>Android</em>, <em>iPhone</em>
-                    용 Rake를 이용해 전송할 수 있습니다.
-                    다른 방법으로는 직접 <code>device_id</code> 값을 <em>shuttle</em> 에 입력할 수 있습니다. 다만 이 경우 포맷은 <code>String</code>
-                    이어야 올바르게 암호화가 됩니다. 예를 들어 <code>{&quot;device_id_from_web&quot;: &quot;48FFAA&quot;}</code> 는 암호화를
-                    지원하지 않습니다.
-                    (<em>escaping</em> 된 값의 경우 가능하나, <strong>권장하지 않습니다.</strong>)</p>
-            </blockquote>
-            <blockquote>
-                <p>Mobile Web이나 Web이라면 <code>uuid</code> 값을 <code>device_id</code> 값 대용으로 사용할 수 있습니다.(Web view에서도 생성 및
-                    전송 가능). 단 <code>uuid</code>값을 <em>shuttle</em>의 header에 포함시켜야 하고 포맷은 <code>String</code>이어야
-                    합니다.
-                </p>
-            </blockquote>
-            <ul>
-                <li>XHR을 지원하지 않는 브라우저를 위해서 XDR을 이용해 지원합니다. 다만 <a
-                        href="https://blogs.msdn.microsoft.com/ieinternals/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds/">XDR
-                    Limitation</a> 때문에 HTTPS(Rake Server)로 전송하려면, Client 페이지 또한 HTTPS 이어야 합니다.
-                </li>
-                <li>비동기로 로딩되는 스크립트의 사이즈는 브라우저 종류에 따라 다르며 이는 브라우저 호환성을 맞추기 위한 Polyfill 때문입니다.</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>브라우저 종류</th>
-                    <th style="text-align:center">스크립트 사이즈</th>
-                    <th style="text-align:left">스크립트 이름</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Modern</td>
-                    <td style="text-align:center"><strong>27 KB</strong></td>
-                    <td style="text-align:left">rake.bundle.js</td>
-                </tr>
-                <tr>
-                    <td>IE 9, 10</td>
-                    <td style="text-align:center"><strong>25 KB</strong></td>
-                    <td style="text-align:left">rake.bundle-ie.js</td>
-                </tr>
-                <tr>
-                    <td>IE 8</td>
-                    <td style="text-align:center"><strong>47 KB</strong></td>
-                    <td style="text-align:left">rake.bundle-ie8.js</td>
-                </tr>
-                </tbody>
-            </table>
-            <h2>Usage</h2>
-            <h3>1. Sentinel Shuttle</h3>
-            <ul>
-                <li><strong>Rake</strong> 는 <strong>Sentinel-Shuttle</strong> 과 같이 사용됩니다. <strong>Shuttle</strong> 은 로그
-                    디자이너가 정의한 포맷에 맞게 로그를 남길 수 있도록 도와주는 <em>POJO</em> (= <em>DTO</em>, <em>VO</em>) 입니다. 따라서 <strong>Shuttle</strong>
-                    없이는 <strong>Rake</strong> 를 사용할 수 없습니다.
-                </li>
-                <li>Shuttle을 Sentinel에서 다운받아 <code>&lt;script&gt;</code> 태그를 이용해 추가합니다. 이 예제에서는 Shuttle 클래스의 이름을 <code>MyAppShuttle</code>
-                    이라 가정하겠습니다.
-                </li>
-            </ul>
-            <h3>2. Snippet</h3>
-            <ul>
-                <li>Snippet 코드를 통해서 비동기로 로딩되는 RC-JS의 동작을 제어할 수 있습니다.</li>
-            </ul>
-            <h4>2-1. Snippet 사용방법</h4>
-            <ul>
-                <li>아래 Snippet 코드를 Copy하여 애플리케이션 스크립트 상단에 넣어주세요.</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>&lt;!-- start RC-JS -->&lt;script type=&quot;text/javascript&quot;>
+구 버전의 사용은 다음을 참고하세요.</p>
+<ul>
+<li><a href="https://github.com/skpdi/rake-document/wiki/Z.-(Deprecated)-Rake-Web-v2.x-(%ED%95%9C%EA%B5%AD%EC%96%B4)">v2.x.x</a></li>
+<li><a href="https://github.com/skpdi/rake-document/wiki/Z.-(Deprecated)-Rake-Web-v1.x-(%ED%95%9C%EA%B5%AD%EC%96%B4)">v1.x.x</a></li>
+</ul>
+<h2>Basics</h2>
+<p><strong>아래 내용을 꼭 읽기를 권장합니다.</strong></p>
+<ul>
+<li>rake-javascript(이하 RC-JS)는 Google Analytics(이하 GA)와 동일하게 비동기로 로딩되어 Page View 또는 Custom Format 로그를 전송합니다.</li>
+<li>(<strong>중요</strong>) 사용자 환경 구분을 위해 <code>_$RAKE_ENV</code> 를 입력받습니다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>환경</th>
+<th style="text-align:center"><code>_$RAKE_ENV</code> 값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>상용서버로 전송</td>
+<td style="text-align:center"><code>LIVE</code></td>
+</tr>
+<tr>
+<td>개발서버로 전송</td>
+<td style="text-align:center"><code>DEV</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://github.com/skpdi/sentinel-document/wiki/Sentinel-Shuttle">Shuttle</a> 은 <a href="https://sentinel.skplanet.com:9091/">Sentinel</a> 에서 다운받아 사용합니다.</li>
+<li>(<strong>중요</strong>) <code>device_id</code>, <code>device_model</code> 값은 브라우저에서 얻기 불가능하거나 어려워 수집하지 않습니다. (<a href="https://github.com/skpdi/rake-document/wiki/0.-Home-(%ED%95%9C%EA%B5%AD%EC%96%B4)#2-%EA%B5%AC%EA%B8%80-%EC%8B%9C%ED%8A%B8%EC%97%90%EC%84%9C-%EC%96%B4%EB%96%A4-%ED%95%84%EB%93%9C%EB%93%A4%EC%9D%B4-%EC%9E%90%EB%8F%99%EC%88%98%EC%A7%91-%EC%BB%AC%EB%9F%BC%EC%9D%B8%EA%B0%80%EC%9A%94">플랫폼별 자동수집필드</a>)</li>
+</ul>
+<blockquote>
+<p>WebView라면 Native와의 통신을 이용해 <code>device_id</code> 값을 가져오거나, 데이터를 Native로 넘겨 <em>Android</em>, <em>iPhone</em> 용 Rake를 이용해 전송할 수 있습니다.
+다른 방법으로는 직접 <code>device_id</code> 값을 <em>shuttle</em> 에 입력할 수 있습니다. 다만 이 경우 포맷은 <code>String</code> 이어야 올바르게 암호화가 됩니다. 예를 들어 <code>{&quot;device_id_from_web&quot;: &quot;48FFAA&quot;}</code> 는 암호화를 지원하지 않습니다.
+(<em>escaping</em> 된 값의 경우 가능하나, <strong>권장하지 않습니다.</strong>)</p>
+</blockquote>
+<ul>
+<li>XHR을 지원하지 않는 브라우저를 위해서 XDR을 이용해 지원합니다. 다만 <a href="https://blogs.msdn.microsoft.com/ieinternals/2010/05/13/xdomainrequest-restrictions-limitations-and-workarounds/">XDR Limitation</a> 때문에 HTTPS(Rake Server)로 전송하려면, Client 페이지 또한 HTTPS 이어야 합니다.</li>
+<li>비동기로 로딩되는 스크립트의 사이즈는 브라우저 종류에 따라 다르며 이는 브라우저 호환성을 맞추기 위한 Polyfill 때문입니다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>브라우저 종류</th>
+<th style="text-align:center">스크립트 사이즈</th>
+<th style="text-align:left">스크립트 이름</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modern</td>
+<td style="text-align:center"><strong>25 KB</strong></td>
+<td style="text-align:left">rake.bundle.js</td>
+</tr>
+<tr>
+<td>IE 9, 10</td>
+<td style="text-align:center"><strong>25 KB</strong></td>
+<td style="text-align:left">rake.bundle-ie.js</td>
+</tr>
+<tr>
+<td>IE 8</td>
+<td style="text-align:center"><strong>47 KB</strong></td>
+<td style="text-align:left">rake.bundle-ie8.js</td>
+</tr>
+</tbody>
+</table>
+<h2>Usage</h2>
+<h3>1. Sentinel Shuttle</h3>
+<ul>
+<li><strong>Rake</strong> 는 <strong>Sentinel-Shuttle</strong> 과 같이 사용됩니다. <strong>Shuttle</strong> 은 로그 디자이너가 정의한 포맷에 맞게 로그를 남길 수 있도록 도와주는 <em>POJO</em> (= <em>DTO</em>, <em>VO</em>) 입니다. 따라서 <strong>Shuttle</strong> 없이는 <strong>Rake</strong> 를 사용할 수 없습니다.</li>
+<li>Shuttle을 Sentinel에서 다운받아 <code>&lt;script&gt;</code> 태그를 이용해 추가합니다. 이 예제에서는 Shuttle 클래스의 이름을 <code>MyAppShuttle</code> 이라 가정하겠습니다.</li>
+</ul>
+<h3>2. Snippet</h3>
+<ul>
+<li>Snippet 코드를 통해서 비동기로 로딩되는 RC-JS의 동작을 제어할 수 있습니다.</li>
+</ul>
+<h4>2-1. Snippet 사용방법</h4>
+<ul>
+<li>아래 Snippet 코드를 Copy하여 애플리케이션 스크립트 상단에 넣어주세요.</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>&lt;!-- start RC-JS -->&lt;script type=&quot;text/javascript&quot;>
 // RC-JS를 비동기로 로딩하는 Snippet 입니다.
 (function () {function a(r,e,$){return e in r?Object.defineProperty(r,e,{&quot;value&quot;:$,&quot;enumerable&quot;:!0,&quot;configurable&quot;:!0,&quot;writable&quot;:!0}):r[e]=$,r}var j=function(e){return e.userAgent.toLowerCase()};var l=function(e){var r=e.userAgent;return&quot;Netscape&quot;===e.appName&&r.indexOf(&quot;trident&quot;)>-1||r.indexOf(&quot;msie&quot;)>-1||r.indexOf(&quot;edge&quot;)>-1};var k=function(e){return e.indexOf(&quot;msie&quot;)&lt;0?0:parseInt(e.split(&quot;msie&quot;)[1],10)};var b=&quot;RAKE&quot;;var f=&quot;_$OPTIONS&quot;;var g=&quot;_$loaded&quot;;var i=&quot;_$cb&quot;;var c=&quot;_$RAKE_ENV&quot;;var h=&quot;_$SV&quot;;var d=&quot;_$RAKE_MODE&quot;;var m=function(e,t){var r=!(arguments.length>2&&arguments[2]!==undefined)||arguments[2],$={};for(var o in e)e.hasOwnProperty(o)&&($[o]=e[o]);for(var n in t)t.hasOwnProperty(n)&&(r?$[n]=t[n]:e[n]=t[n]);return r?$:e};var n=&quot;1.0&quot;,o=&quot;rake.bundle.js&quot;,p=&quot;rake.bundle-ie8.js&quot;,q=&quot;rake.bundle-ie.js&quot;,e=function(r,e){return{&quot;init&quot;:function($){e[h]||(function(){var r,$=arguments.length>0&&arguments[0]!==undefined?arguments[0]:{};m(e,(a(r={},g,!1),a(r,f,$[f]||{}),a(r,d,$[d]||[]),a(r,c,$[c]||&quot;LIVE&quot;),a(r,h,n),a(r,i,function(){}),r),!1)}($),function(){if(!r.getElementById(b)){var $=r.createElement(&quot;script&quot;),t=r.getElementsByTagName(&quot;script&quot;)[0];$.id=b,$.type=&quot;text/javascript&quot;,$.async=!0,$.src=function(r){var e=&quot;DEV&quot;===r?&quot;https://pg.rake.skplanet.com:8443/log/static/js/rake/new/current&quot;:&quot;LIVE&quot;===r?&quot;https://rake.skplanet.com:8443/log/static/js/rake/new/current&quot;:&quot;&quot;,$=window.navigator,t=$.appName,c=j($),n=&quot;&quot;.concat(e,&quot;/&quot;).concat(o);if(l({&quot;userAgent&quot;:c,&quot;appName&quot;:t})){var i=k(c);8===i?n=&quot;&quot;.concat(e,&quot;/&quot;).concat(p):i>8&&i&lt;11&&(n=&quot;&quot;.concat(e,&quot;/&quot;).concat(q))}return n}(e[c]),t.parentNode.insertBefore($,t)}}(),function(){if(!e[g])for(var r=[&quot;track&quot;,&quot;flush&quot;,&quot;create&quot;,&quot;remove&quot;,&quot;collect&quot;,&quot;autoTrack&quot;,&quot;setServerURL&quot;,&quot;setServerPort&quot;,&quot;excludeAutoProperties&quot;],$=function($,t){var c=r[$];e[c]=function(){var r=Array.prototype.slice.call(arguments,0),$=[c];$=$.concat(r),e.push($)}},t=0,c=r.length;t&lt;c;t++)$(t,c)}(),window[b]=e)}}}(document,window[b]||[]);window.snippet=e;})();
 
@@ -177,83 +148,83 @@
 snippet.init();
 &lt;/script>&lt;!-- end RC-JS -->
 </code></pre>
-            <h4>2-2. Snippet 옵션</h4>
-            <ul>
-                <li>RC-JS 동작 제어용 옵션</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>_$RAKE_ENV</td>
-                    <td style="text-align:left">사용자 환경 구분 (상용(기본):<code>LIVE</code>, 개발:<code>DEV</code>)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>_$RAKE_MODE</td>
-                    <td style="text-align:left">RC-JS + α의 기능 (현재는 DMP만 지원)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Array</td>
-                </tr>
-                <tr>
-                    <td>_$OPTIONS</td>
-                    <td style="text-align:left">RC-JS 동작에 필요한 값</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Object</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>_$OPTOINS 값</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>isBeacon</td>
-                    <td style="text-align:left">브라우저의 Beacon 기능 사용 유무</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Boolean</td>
-                </tr>
-                <tr>
-                    <td>isCookieSync</td>
-                    <td style="text-align:left">DMP의 PIXEL(Cookie Sync) API 연동 유무</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Boolean</td>
-                </tr>
-                <tr>
-                    <td>nid</td>
-                    <td style="text-align:left">DMP의 PIXEL API 연동 시 사용하는 제휴사 식별자</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>uid</td>
-                    <td style="text-align:left">DMP의 PIXEL API 연동 시 사용하는 제휴사 사용자 식별자</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>예제</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>// Snippet 옵션 설정
+<h4>2-2. Snippet 옵션</h4>
+<ul>
+<li>RC-JS 동작 제어용 옵션</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>_$RAKE_ENV</td>
+<td style="text-align:left">사용자 환경 구분 (상용(기본):<code>LIVE</code>, 개발:<code>DEV</code>)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>_$RAKE_MODE</td>
+<td style="text-align:left">RC-JS + α의 기능 (현재는 DMP만 지원)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Array</td>
+</tr>
+<tr>
+<td>_$OPTIONS</td>
+<td style="text-align:left">RC-JS 동작에 필요한 값</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Object</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>_$OPTOINS 값</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>isBeacon</td>
+<td style="text-align:left">브라우저의 Beacon 기능 사용 유무</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+<tr>
+<td>isCookieSync</td>
+<td style="text-align:left">DMP의 PIXEL(Cookie Sync) API 연동 유무</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+<tr>
+<td>nid</td>
+<td style="text-align:left">DMP의 PIXEL API 연동 시 사용하는 제휴사 식별자</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>uid</td>
+<td style="text-align:left">DMP의 PIXEL API 연동 시 사용하는 제휴사 사용자 식별자</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>예제</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// Snippet 옵션 설정
 snippet.init({
 	_$RAKE_ENV: 'DEV',
 	_$RAKE_MODE: ['DMP'],
@@ -265,353 +236,308 @@ snippet.init({
 	}
 });
 </code></pre>
-            <h4>2-3. Snippet 옵션을 통한 RC-JS 기능</h4>
-            <h5>1) DMP 기능</h5>
-            <ul>
-                <li>자체적으로 DMP의 도메인 비실명 Cookie UID를 운영하고 PIXEL(Cookie Sync)를 사용하는 경우 <code>_$OPTIONS</code> 필드에 <code>isCookieSync</code>,
-                    <code>nid</code>, <code>uid</code> 를 설정합니다.
-                </li>
-            </ul>
-            <h5>2) Beacon 기능</h5>
-            <ul>
-                <li><code>Beacon</code> 은 페이지 전환 시 전송 요청이 취소(XDR 혹은 XHR)되는 브라우저의 특징을 보완하여 <code>Beacon</code> 으로 로그 전송을
-                    보장합니다. (RC-JS 기본 전송모드: XDR 혹은 XHR)
-                </li>
-                <li><code>_$OPTIONS</code> 필드에 <code>isBeacon</code> 을 true로 설정하면, <code>Beacon</code> 모드로 전송합니다. 다만
-                    true 값이지만 <code>Beacon</code> 을 지원하지 않는 브라우저(IE)에서는 XDR 혹은 XHR로 전송이 됩니다.
-                </li>
-                <li><code>Beacon</code> 전송 시 <code>successCallback</code>, <code>failureCallback</code>, <code>timeoutAsMillis</code>
-                    비활성 됩니다.
-                </li>
-            </ul>
-            <h3>3. Rake API</h3>
-            <ul>
-                <li>Shuttle 사용법은 <a href="https://github.com/skpdi/sentinel-document/wiki/Sentinel-Shuttle">Sentinel
-                    Document</a> 을 참조해주세요.
-                </li>
-            </ul>
-            <h4>3-1 create()</h4>
-            <ul>
-                <li>Rake 인스턴스를 생성한다.</li>
-                <li>DMP 기능
-                    <ul>
-                        <li><code>DMP</code> 기능을 사용하기 위해서 <code>snippet.init()</code> 에 <code>_$RAKE_MODE:
-                            ['DMP']</code> 를 추가합니다.
-                        </li>
-                        <li><code>DMP</code> 모듈을 사용 시 PIXEL API를 호출하여 <code>dmp_uid</code> 를 발급 받고, 이후 GETUID API를 통해서
-                            <code>DMP</code> 에서 발급된 <code>dmp_uid</code> 를 localStorage에 저장합니다.
-                        </li>
-                        <li>localStorage에 저장된 <code>dmp_uid</code> 를 Payload의 header에 저장하여 보내기 위해서 Rake Instance 생성 시
-                            <code>isDMP</code> 을 넣어야 합니다. (다중 Instance 지원 때문)
-                        </li>
-                    </ul>
-                </li>
-                <li>UUID 기능
-                    <ul>
-                        <li><code>UUID</code> 기능을 사용하기 위해서 RAKE Instance 생성 시 Parameters에 <code>uuid:true</code>를 입력합니다.
-                        </li>
-                        <li><code>UUID</code> 기능 사용 시, localStorage에 <code>RAKE:uuid</code>를 key값으로 identifier를 생성,저장하고
-                            전송합니다.
-                        </li>
-                        <li>localStorage에 저장된 <code>RAKE:uuid</code>를 Payload의 header에 저장하여 보내기 위해서 Rake Instnace 생성 시
-                            <code>uuid</code>를 true로 설정해야 합니다.
-                        </li>
-                    </ul>
-                </li>
-                <li>Parameters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>instanceAlias</td>
-                    <td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)
-                    </td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>token</td>
-                    <td style="text-align:left">Sentinel에서 발급받은 Token 값</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>isDMP</td>
-                    <td style="text-align:left">DMP 기능 활성 유무 (기본: false)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Boolean</td>
-                </tr>
-                <tr>
-                    <td>uuid</td>
-                    <td style="text-align:left">UUID 기능 활성 유무 (기본: false)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Boolean</td>
-                </tr>
-                <tr>
-                    <td>filters</td>
-                    <td style="text-align:left">URL이 모두 매칭될 경우에만 전송</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Array</td>
-                </tr>
-                <tr>
-                    <td>converters</td>
-                    <td style="text-align:left">URL Query 혹은 Cookie 값을 Payload로 설정해서 전송</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Array</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>filters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>type</td>
-                    <td style="text-align:left">현재는 URL_INCLUDES_ALL(URL 모두 매칭)만 지원</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>patterns</td>
-                    <td style="text-align:left">URL에 매칭할 키워드 (없거나 빈 배열일 경우 모두 전송)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Array</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>converters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>type</td>
-                    <td style="text-align:left">URL_QUERY_TO_PAYLOAD, COOKIE_TO_PAYLOAD</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>from</td>
-                    <td style="text-align:left">URL Query 혹은 Cookie에서 사용할 Key 값</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>to</td>
-                    <td style="text-align:left">Payload에 설정할 Key 값</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                </tbody>
-            </table>
-            <p>% Payload 설정 시 body에 설정하고 싶으면, <code>_$body.TO값</code> 설정 (예: body의 속성으로 <code>user_session</code> 을 설정하고
-                싶으면 <code>_$body.user_session</code>)</p>
-            <ul>
-                <li>예제</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>// Rake Instance 생성
+<h4>2-3. Snippet 옵션을 통한 RC-JS 기능</h4>
+<h5>1) DMP 기능</h5>
+<ul>
+<li>자체적으로 DMP의 도메인 비실명 Cookie UID를 운영하고 PIXEL(Cookie Sync)를 사용하는 경우 <code>_$OPTIONS</code> 필드에 <code>isCookieSync</code>, <code>nid</code>, <code>uid</code> 를 설정합니다.</li>
+</ul>
+<h5>2) Beacon 기능</h5>
+<ul>
+<li><code>Beacon</code> 은 페이지 전환 시 전송 요청이 취소(XDR 혹은 XHR)되는 브라우저의 특징을 보완하여 <code>Beacon</code> 으로 로그 전송을 보장합니다. (RC-JS 기본 전송모드: XDR 혹은 XHR)</li>
+<li><code>_$OPTIONS</code> 필드에 <code>isBeacon</code> 을 true로 설정하면, <code>Beacon</code> 모드로 전송합니다. 다만 true 값이지만 <code>Beacon</code> 을 지원하지 않는 브라우저(IE)에서는 XDR 혹은 XHR로 전송이 됩니다.</li>
+<li><code>Beacon</code> 전송 시 <code>successCallback</code>, <code>failureCallback</code>, <code>timeoutAsMillis</code> 비활성 됩니다.</li>
+</ul>
+<h3>3. Rake API</h3>
+<ul>
+<li>Shuttle 사용법은 <a href="https://github.com/skpdi/sentinel-document/wiki/Sentinel-Shuttle">Sentinel Document</a> 을 참조해주세요.</li>
+</ul>
+<h4>3-1 create()</h4>
+<ul>
+<li>Rake 인스턴스를 생성한다.</li>
+<li>DMP 기능
+<ul>
+<li><code>DMP</code> 기능을 사용하기 위해서 <code>snippet.init()</code> 에 <code>_$RAKE_MODE: ['DMP']</code> 를 추가합니다.</li>
+<li><code>DMP</code> 모듈을 사용 시 PIXEL API를 호출하여 <code>dmp_uid</code> 를 발급 받고, 이후 GETUID API를 통해서 <code>DMP</code> 에서 발급된 <code>dmp_uid</code> 를 localStorage에 저장합니다.</li>
+<li>localStorage에 저장된 <code>dmp_uid</code> 를 Payload의 header에 저장하여 보내기 위해서 Rake Instance 생성 시 <code>isDMP</code> 을 넣어야 합니다. (다중 Instance 지원 때문)</li>
+</ul>
+</li>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instanceAlias</td>
+<td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>token</td>
+<td style="text-align:left">Sentinel에서 발급받은 Token 값</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>isDMP</td>
+<td style="text-align:left">DMP 기능 활성 유무 (기본: false)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+<tr>
+<td>filters</td>
+<td style="text-align:left">URL이 모두 매칭될 경우에만 전송</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Array</td>
+</tr>
+<tr>
+<td>converters</td>
+<td style="text-align:left">URL Query 혹은 Cookie 값을 Payload로 설정해서 전송</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Array</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>filters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td style="text-align:left">현재는 URL_INCLUDES_ALL(URL 모두 매칭)만 지원</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>patterns</td>
+<td style="text-align:left">URL에 매칭할 키워드 (없거나 빈 배열일 경우 모두 전송)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Array</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>converters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td style="text-align:left">URL_QUERY_TO_PAYLOAD, COOKIE_TO_PAYLOAD</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>from</td>
+<td style="text-align:left">URL Query 혹은 Cookie에서 사용할 Key 값</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>to</td>
+<td style="text-align:left">Payload에 설정할 Key 값</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+</tbody>
+</table>
+<p>% Payload 설정 시 body에 설정하고 싶으면, <code>_$body.TO값</code> 설정 (예: body의 속성으로 <code>user_session</code> 을 설정하고 싶으면 <code>_$body.user_session</code>)</p>
+<ul>
+<li>예제</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// Rake Instance 생성
 RAKE.create({
-  instanceAlias: 'Instance 별칭',
-  token: 'Sentinel에서 발급받은 Token 값',
-  isDMP: true,
-  uuid: true,
-  filters: [
-    { type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
-  ],
-  converters: [
-    // URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
-    { type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
-
-    // URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
-    { type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
-
-    // 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
-    { type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
-  ]
+	instanceAlias: 'Instance 별칭',
+	token: 'Sentinel에서 발급받은 Token 값',
+	isDMP: true,
+	filters: [
+		{ type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
+	],
+	converters: [
+		// URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
+		{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
+		
+		// URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
+		{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
+		
+		// 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
+		{ type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
+	]
 });
 </code></pre>
-            <h4>3-2 autoTrack()</h4>
-            <ul>
-                <li>create() + track() 기능</li>
-                <li>Parameters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>instanceAlias</td>
-                    <td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 설정)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>token</td>
-                    <td style="text-align:left">Sentinel에서 발급받은 Token 값</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>shuttle</td>
-                    <td style="text-align:left">Shuttle 생성자 명 (Payload 생성용)</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>isDMP</td>
-                    <td style="text-align:left">DMP 기능 활성 유무 (기본: false)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Boolean</td>
-                </tr>
-                <tr>
-                    <td>uuid</td>
-                    <td style="text-align:left">UUID 기능 활성 유무 (기본: false)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Boolean</td>
-                </tr>
-                <tr>
-                    <td>filters</td>
-                    <td style="text-align:left">URL이 모두 매칭될 경우에만 전송 (상세 코드는 3-1 create() 참조)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Array</td>
-                </tr>
-                <tr>
-                    <td>converters</td>
-                    <td style="text-align:left">URL Query 혹은 Cookie 값을 Payload로 설정해서 전송 (상세 코드는 3-1 create() 참조)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Array</td>
-                </tr>
-                <tr>
-                    <td>timeoutAsMillis</td>
-                    <td style="text-align:left">전송 Timeout 밀리초 (기본: 15000)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Number</td>
-                </tr>
-                <tr>
-                    <td>successCallback</td>
-                    <td style="text-align:left">전송 성공 시 Callback</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Function</td>
-                </tr>
-                <tr>
-                    <td>failureCallback</td>
-                    <td style="text-align:left">전송 실패 시 Callback</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Function</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>예제</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>// Rake Instance 자동 생성 및 전송
+<h4>3-2 autoTrack()</h4>
+<ul>
+<li>create() + track() 기능</li>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instanceAlias</td>
+<td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 설정)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>token</td>
+<td style="text-align:left">Sentinel에서 발급받은 Token 값</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>shuttle</td>
+<td style="text-align:left">Shuttle 생성자 명 (Payload 생성용)</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>isDMP</td>
+<td style="text-align:left">DMP 기능 활성 유무 (기본: false)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Boolean</td>
+</tr>
+<tr>
+<td>filters</td>
+<td style="text-align:left">URL이 모두 매칭될 경우에만 전송 (상세 코드는 3-1 create() 참조)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Array</td>
+</tr>
+<tr>
+<td>converters</td>
+<td style="text-align:left">URL Query 혹은 Cookie 값을 Payload로 설정해서 전송 (상세 코드는 3-1 create() 참조)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Array</td>
+</tr>
+<tr>
+<td>timeoutAsMillis</td>
+<td style="text-align:left">전송 Timeout 밀리초 (기본: 15000)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Number</td>
+</tr>
+<tr>
+<td>successCallback</td>
+<td style="text-align:left">전송 성공 시 Callback</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Function</td>
+</tr>
+<tr>
+<td>failureCallback</td>
+<td style="text-align:left">전송 실패 시 Callback</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Function</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>예제</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// Rake Instance 자동 생성 및 전송
 RAKE.autoTrack({
-  instanceAlias: 'Instance 별칭',
-  token: 'Sentinel에서 발급받은 Token 값',
-  shuttle: MyAppShuttle, // Shuttle 생성자 명
-  isDMP: true,
-  uuid: true,
-  filters: [
-    { type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
-  ],
-  converters: [
-    // URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
-    { type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
-
-    // URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
-    { type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
-
-    // 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
-    { type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
-  ],
-  timeoutAsMillis: 1000,
-  successCallback: function() { console.log('SUCCESS CALLBACK') },
-  failureCallback: function() { console.log('FAILURE CALLBACK') }
+	instanceAlias: 'Instance 별칭',
+	token: 'Sentinel에서 발급받은 Token 값',
+	shuttle: MyAppShuttle, // Shuttle 생성자 명
+	isDMP: true,
+	filters: [
+		{ type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
+	],
+	converters: [
+		// URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
+		{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
+		
+		// URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
+		{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
+		
+		// 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
+		{ type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
+	],
+	timeoutAsMillis: 1000,
+	successCallback: function() { console.log('SUCCESS CALLBACK') },
+	failureCallback: function() { console.log('FAILURE CALLBACK') }
 });
 </code></pre>
-            <h4>3-3 track()</h4>
-            <ul>
-                <li>Payload를 메모리(localStorage)에 적재하고 바로 전송합니다. (1건씩 처리용, collect() + flush() 기능)</li>
-                <li>Parameters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>instanceAlias</td>
-                    <td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)
-                    </td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>payload</td>
-                    <td style="text-align:left">Shuttle을 이용한 Payload 값</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">Object</td>
-                </tr>
-                <tr>
-                    <td>timeoutAsMillis</td>
-                    <td style="text-align:left">전송 Timeout 밀리초 (기본: 15000)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Number</td>
-                </tr>
-                <tr>
-                    <td>successCallback</td>
-                    <td style="text-align:left">전송 성공 시 Callback</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Function</td>
-                </tr>
-                <tr>
-                    <td>failureCallback</td>
-                    <td style="text-align:left">전송 실패 시 Callback</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Function</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>예제</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>// 전송할 Payload 생성
+<h4>3-3 track()</h4>
+<ul>
+<li>Payload를 메모리(localStorage)에 적재하고 바로 전송합니다. (1건씩 처리용, collect() + flush() 기능)</li>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instanceAlias</td>
+<td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>payload</td>
+<td style="text-align:left">Shuttle을 이용한 Payload 값</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">Object</td>
+</tr>
+<tr>
+<td>timeoutAsMillis</td>
+<td style="text-align:left">전송 Timeout 밀리초 (기본: 15000)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Number</td>
+</tr>
+<tr>
+<td>successCallback</td>
+<td style="text-align:left">전송 성공 시 Callback</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Function</td>
+</tr>
+<tr>
+<td>failureCallback</td>
+<td style="text-align:left">전송 실패 시 Callback</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Function</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>예제</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// 전송할 Payload 생성
 const shuttle = new MyAppShuttle();
 shuttle.setAction_id('view');
 shuttle.setPage_id('49E-FF01');
@@ -626,54 +552,44 @@ RAKE.track({
 	failureCallback: function() { console.log('FAILURE CALLBACK') }
 });
 </code></pre>
-            <h4>3-4 collect()</h4>
-            <ul>
-                <li>Payload를 리스트 형태로 메모리(localStorage)에 적재합니다. (전송 실패 및 유실 방지용)</li>
-                <li>DMP 기능
-                    <ul>
-                        <li>create() 생성 시 <code>isDMP: true</code> 이면, localStorage에 저장된 <code>dmp_uid</code> 를 header의
-                            <code>dmpc</code> 에 설정
-                        </li>
-                    </ul>
-                </li>
-                <li>UUID 기능
-                    <ul>
-                        <li>create() 생성 시 <code>uuid: true</code> 이면, localStorage에 저장된 <code>RAKE:uuid</code> 를 header의
-                            <code>uuid</code> 에 설정
-                        </li>
-                    </ul>
-                </li>
-                <li>Parameters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>instanceAlias</td>
-                    <td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)
-                    </td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>payload</td>
-                    <td style="text-align:left">Shuttle을 이용한 Payload 값</td>
-                    <td style="text-align:center">O</td>
-                    <td style="text-align:center">Object</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>예제</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>// 전송할 Payload 생성 및 적재 01
+<h4>3-4 collect()</h4>
+<ul>
+<li>Payload를 리스트 형태로 메모리(localStorage)에 적재합니다. (전송 실패 및 유실 방지용)</li>
+<li>DMP 기능
+<ul>
+<li>create() 생성 시 <code>isDMP: true</code> 이면, localStorage에 저장된 <code>dmp_uid</code> 를 header의 <code>dmpc</code> 에 설정</li>
+</ul>
+</li>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instanceAlias</td>
+<td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>payload</td>
+<td style="text-align:left">Shuttle을 이용한 Payload 값</td>
+<td style="text-align:center">O</td>
+<td style="text-align:center">Object</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>예제</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// 전송할 Payload 생성 및 적재 01
 const shuttle = new MyAppShuttle();
 shuttle.setAction_id('view');
 shuttle.setPage_id('49E-FF01');
@@ -692,53 +608,52 @@ RAKE.collect({
 	payload: shuttle.getImmutableJSONObject()
 });
 </code></pre>
-            <h4>3-5 flush()</h4>
-            <ul>
-                <li>리스트 형태로 메모리(localStorage)에 적재된 Payload를 서버에 전송합니다.</li>
-                <li>전송 실패시 메모리에 재적재합니다. (메모리 적재 사이즈: 100개)</li>
-                <li>Parameters</li>
-            </ul>
-            <table>
-                <thead>
-                <tr>
-                    <th>키</th>
-                    <th style="text-align:left">설명</th>
-                    <th style="text-align:center">필수</th>
-                    <th style="text-align:center">타입</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>instanceAlias</td>
-                    <td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)
-                    </td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">String</td>
-                </tr>
-                <tr>
-                    <td>timeoutAsMillis</td>
-                    <td style="text-align:left">전송 Timeout 밀리초 (기본: 15000)</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Number</td>
-                </tr>
-                <tr>
-                    <td>successCallback</td>
-                    <td style="text-align:left">전송 성공 시 Callback</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Function</td>
-                </tr>
-                <tr>
-                    <td>failureCallback</td>
-                    <td style="text-align:left">전송 실패 시 Callback</td>
-                    <td style="text-align:center">X</td>
-                    <td style="text-align:center">Function</td>
-                </tr>
-                </tbody>
-            </table>
-            <ul>
-                <li>예제</li>
-            </ul>
-            <pre class="prettyprint source lang-javascript"><code>// 전송
+<h4>3-5 flush()</h4>
+<ul>
+<li>리스트 형태로 메모리(localStorage)에 적재된 Payload를 서버에 전송합니다.</li>
+<li>전송 실패시 메모리에 재적재합니다. (메모리 적재 사이즈: 100개)</li>
+<li>Parameters</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>키</th>
+<th style="text-align:left">설명</th>
+<th style="text-align:center">필수</th>
+<th style="text-align:center">타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instanceAlias</td>
+<td style="text-align:left">Instance 별칭 (다중 Instance 사용 시 필수이며, 설정 시 다른 API(예: track 등)에서도 설정해야함)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">String</td>
+</tr>
+<tr>
+<td>timeoutAsMillis</td>
+<td style="text-align:left">전송 Timeout 밀리초 (기본: 15000)</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Number</td>
+</tr>
+<tr>
+<td>successCallback</td>
+<td style="text-align:left">전송 성공 시 Callback</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Function</td>
+</tr>
+<tr>
+<td>failureCallback</td>
+<td style="text-align:left">전송 실패 시 Callback</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">Function</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>예제</li>
+</ul>
+<pre class="prettyprint source lang-javascript"><code>// 전송
 RAKE.flush({
 	instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
 	timeoutAsMillis: 1000,
@@ -746,149 +661,152 @@ RAKE.flush({
 	failureCallback: function() { console.log('FAILURE CALLBACK') }
 });
 </code></pre>
-            <h4>예제 코드</h4>
-            <pre class="prettyprint source lang-javascript"><code>&lt;html lang=&quot;en&quot;&gt;
-  &lt;body&gt;
-    &lt;!-- start RC-JS --&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-    // RC-JS를 비동기로 로딩하는 Snippet 입니다.
-    (function () {function a(r,e,$){return e in r?Object.defineProperty(r,e,{&quot;value&quot;:$,&quot;enumerable&quot;:!0,&quot;configurable&quot;:!0,&quot;writable&quot;:!0}):r[e]=$,r}var j=function(e){return e.userAgent.toLowerCase()};var l=function(e){var r=e.userAgent;return&quot;Netscape&quot;===e.appName&amp;&amp;r.indexOf(&quot;trident&quot;)&gt;-1||r.indexOf(&quot;msie&quot;)&gt;-1||r.indexOf(&quot;edge&quot;)&gt;-1};var k=function(e){return e.indexOf(&quot;msie&quot;)&lt;0?0:parseInt(e.split(&quot;msie&quot;)[1],10)};var b=&quot;RAKE&quot;;var f=&quot;_$OPTIONS&quot;;var g=&quot;_$loaded&quot;;var i=&quot;_$cb&quot;;var c=&quot;_$RAKE_ENV&quot;;var h=&quot;_$SV&quot;;var d=&quot;_$RAKE_MODE&quot;;var m=function(e,t){var r=!(arguments.length&gt;2&amp;&amp;arguments[2]!==undefined)||arguments[2],$={};for(var o in e)e.hasOwnProperty(o)&amp;&amp;($[o]=e[o]);for(var n in t)t.hasOwnProperty(n)&amp;&amp;(r?$[n]=t[n]:e[n]=t[n]);return r?$:e};var n=&quot;1.0&quot;,o=&quot;rake.bundle.js&quot;,p=&quot;rake.bundle-ie8.js&quot;,q=&quot;rake.bundle-ie.js&quot;,e=function(r,e){return{&quot;init&quot;:function($){e[h]||(function(){var r,$=arguments.length&gt;0&amp;&amp;arguments[0]!==undefined?arguments[0]:{};m(e,(a(r={},g,!1),a(r,f,$[f]||{}),a(r,d,$[d]||[]),a(r,c,$[c]||&quot;LIVE&quot;),a(r,h,n),a(r,i,function(){}),r),!1)}($),function(){if(!r.getElementById(b)){var $=r.createElement(&quot;script&quot;),t=r.getElementsByTagName(&quot;script&quot;)[0];$.id=b,$.type=&quot;text/javascript&quot;,$.async=!0,$.src=function(r){var e=&quot;DEV&quot;===r?&quot;https://pg.rake.skplanet.com:8443/log/static/js/rake/new/current&quot;:&quot;LIVE&quot;===r?&quot;https://rake.skplanet.com:8443/log/static/js/rake/new/current&quot;:&quot;&quot;,$=window.navigator,t=$.appName,c=j($),n=&quot;&quot;.concat(e,&quot;/&quot;).concat(o);if(l({&quot;userAgent&quot;:c,&quot;appName&quot;:t})){var i=k(c);8===i?n=&quot;&quot;.concat(e,&quot;/&quot;).concat(p):i&gt;8&amp;&amp;i&lt;11&amp;&amp;(n=&quot;&quot;.concat(e,&quot;/&quot;).concat(q))}return n}(e[c]),t.parentNode.insertBefore($,t)}}(),function(){if(!e[g])for(var r=[&quot;track&quot;,&quot;flush&quot;,&quot;create&quot;,&quot;remove&quot;,&quot;collect&quot;,&quot;autoTrack&quot;,&quot;setServerURL&quot;,&quot;setServerPort&quot;,&quot;excludeAutoProperties&quot;],$=function($,t){var c=r[$];e[c]=function(){var r=Array.prototype.slice.call(arguments,0),$=[c];$=$.concat(r),e.push($)}},t=0,c=r.length;t&lt;c;t++)$(t,c)}(),window[b]=e)}}}(document,window[b]||[]);window.snippet=e;})();
+<h4>예제 코드</h4>
+<pre class="prettyprint source lang-javascript"><code>&lt;html lang=&quot;en&quot;>
+&lt;body>
+&lt;!-- start RC-JS -->&lt;script type=&quot;text/javascript&quot;>
+	// RC-JS를 비동기로 로딩하는 Snippet 입니다.
+	(function () {function a(r,e,$){return e in r?Object.defineProperty(r,e,{&quot;value&quot;:$,&quot;enumerable&quot;:!0,&quot;configurable&quot;:!0,&quot;writable&quot;:!0}):r[e]=$,r}var j=function(e){return e.userAgent.toLowerCase()};var l=function(e){var r=e.userAgent;return&quot;Netscape&quot;===e.appName&&r.indexOf(&quot;trident&quot;)>-1||r.indexOf(&quot;msie&quot;)>-1||r.indexOf(&quot;edge&quot;)>-1};var k=function(e){return e.indexOf(&quot;msie&quot;)&lt;0?0:parseInt(e.split(&quot;msie&quot;)[1],10)};var b=&quot;RAKE&quot;;var f=&quot;_$OPTIONS&quot;;var g=&quot;_$loaded&quot;;var i=&quot;_$cb&quot;;var c=&quot;_$RAKE_ENV&quot;;var h=&quot;_$SV&quot;;var d=&quot;_$RAKE_MODE&quot;;var m=function(e,t){var r=!(arguments.length>2&&arguments[2]!==undefined)||arguments[2],$={};for(var o in e)e.hasOwnProperty(o)&&($[o]=e[o]);for(var n in t)t.hasOwnProperty(n)&&(r?$[n]=t[n]:e[n]=t[n]);return r?$:e};var n=&quot;1.0&quot;,o=&quot;rake.bundle.js&quot;,p=&quot;rake.bundle-ie8.js&quot;,q=&quot;rake.bundle-ie.js&quot;,e=function(r,e){return{&quot;init&quot;:function($){e[h]||(function(){var r,$=arguments.length>0&&arguments[0]!==undefined?arguments[0]:{};m(e,(a(r={},g,!1),a(r,f,$[f]||{}),a(r,d,$[d]||[]),a(r,c,$[c]||&quot;LIVE&quot;),a(r,h,n),a(r,i,function(){}),r),!1)}($),function(){if(!r.getElementById(b)){var $=r.createElement(&quot;script&quot;),t=r.getElementsByTagName(&quot;script&quot;)[0];$.id=b,$.type=&quot;text/javascript&quot;,$.async=!0,$.src=function(r){var e=&quot;DEV&quot;===r?&quot;https://pg.rake.skplanet.com:8443/log/static/js/rake/new/current&quot;:&quot;LIVE&quot;===r?&quot;https://rake.skplanet.com:8443/log/static/js/rake/new/current&quot;:&quot;&quot;,$=window.navigator,t=$.appName,c=j($),n=&quot;&quot;.concat(e,&quot;/&quot;).concat(o);if(l({&quot;userAgent&quot;:c,&quot;appName&quot;:t})){var i=k(c);8===i?n=&quot;&quot;.concat(e,&quot;/&quot;).concat(p):i>8&&i&lt;11&&(n=&quot;&quot;.concat(e,&quot;/&quot;).concat(q))}return n}(e[c]),t.parentNode.insertBefore($,t)}}(),function(){if(!e[g])for(var r=[&quot;track&quot;,&quot;flush&quot;,&quot;create&quot;,&quot;remove&quot;,&quot;collect&quot;,&quot;autoTrack&quot;,&quot;setServerURL&quot;,&quot;setServerPort&quot;,&quot;excludeAutoProperties&quot;],$=function($,t){var c=r[$];e[c]=function(){var r=Array.prototype.slice.call(arguments,0),$=[c];$=$.concat(r),e.push($)}},t=0,c=r.length;t&lt;c;t++)$(t,c)}(),window[b]=e)}}}(document,window[b]||[]);window.snippet=e;})();
 
-    // Snippet 옵션 설정
-    snippet.init({
-        _$RAKE_ENV: &#39;DEV&#39;,
-        _$RAKE_MODE: [&#39;DMP&#39;],
-        _$OPTIONS: {
-            isBeacon: true,
-            isCookieSync: true,
-            nid: &#39;제휴사 식별자&#39;,
-            uid: &#39;제휴사 사용자 식별자&#39;
-        }
-    });
-  &lt;/script&gt;&lt;!-- end RC-JS --&gt;
-    &lt;!-- Shuttle 스크립트 로딩 --&gt;
-    &lt;script src=&quot;./shuttle/MyAppShuttle.js&quot;&gt;&lt;/script&gt;
-    &lt;script type=&quot;text/javascript&quot;&gt;
-      const test = () =&gt; {
-      // Rake Instance 생성
-      RAKE.create({
-        instanceAlias: &#39;Instance 별칭&#39;,
-        token: &#39;Sentinel에서 발급받은 Token 값&#39;,
-        isDMP: true,
-        uuid: true,
-        filters: [
-          { type: &#39;URL_INCLUDES_ALL&#39;, patterns: [&#39;localhost&#39;, &#39;index.html&#39;] }
-        ],
-        converters: [
-          // URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
-          { type: &#39;URL_QUERY_TO_PAYLOAD&#39;, from: &#39;userSession&#39;, to: &#39;_$body.user_session&#39; },
+	// Snippet 옵션 설정
+	snippet.init({
+		_$RAKE_ENV: 'DEV',
+		_$RAKE_MODE: ['DMP'],
+		_$OPTIONS: {
+			isBeacon: true,
+			isCookieSync: true,
+			nid: '제휴사 식별자',
+			uid: '제휴사 사용자 식별자'
+		}
+	});
+&lt;/script>&lt;!-- end RC-JS -->
+&lt;!-- Shuttle 스크립트 로딩 -->
+&lt;script src=&quot;./shuttle/MyAppShuttle.js&quot;>&lt;/script>
+&lt;script type=&quot;text/javascript&quot;>
+	const test = () => {
+		// Rake Instance 생성
+		RAKE.create({
+			instanceAlias: 'Instance 별칭',
+			token: 'Sentinel에서 발급받은 Token 값',
+			isDMP: true,
+			filters: [
+				{ type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
+			],
+			converters: [
+				// URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
+				{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
 
-          // URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
-          { type: &#39;URL_QUERY_TO_PAYLOAD&#39;, from: &#39;userId&#39;, to: &#39;user_id&#39; },
+				// URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
+				{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
 
-          // 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
-          { type: &#39;COOKIE_TO_PAYLOAD&#39;, from: &#39;cookieSession&#39;, to: &#39;cookie_session&#39; }
-        ]
-      });
+				// 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
+				{ type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
+			]
+		});
 
-      /*
-       * track() 테스트
-       */
-      // 전송할 Payload 생성
-      const shuttle = new MyAppShuttle();
-      shuttle.setAction_id(&#39;view&#39;);
-      shuttle.setPage_id(&#39;49E-FF01&#39;);
-      const myPayload = shuttle.getImmutableJSONObject();
+		/*
+		 * track() 테스트
+		 */
+		// 전송할 Payload 생성
+		const shuttle = new MyAppShuttle();
+		shuttle.setAction_id('view');
+		shuttle.setPage_id('49E-FF01');
+		const myPayload = shuttle.getImmutableJSONObject();
 
-      // Payload 전송
-      RAKE.track({
-      instanceAlias: &#39;Instance 별칭&#39;, // create()에서 설정한 instanceAlias
-      payload: myPayload,
-      timeoutAsMillis: 1000,
-      successCallback: function() { console.log(&#39;SUCCESS CALLBACK for Track&#39;) },
-      failureCallback: function() { console.log(&#39;FAILURE CALLBACK for Track&#39;) }
-    });
+		// Payload 전송
+		RAKE.track({
+			instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+			payload: myPayload,
+			timeoutAsMillis: 1000,
+			successCallback: function() { console.log('SUCCESS CALLBACK for Track') },
+			failureCallback: function() { console.log('FAILURE CALLBACK for Track') }
+		});
 
 
-      /*
-       * collect() + flush() 테스트
-       */
-      // 전송할 Payload 생성 및 적재 01
-      // const shuttle = new MyAppShuttle(); // 앞에서 선언해서 주석 처리
-      shuttle.setAction_id(&#39;view&#39;);
-      shuttle.setPage_id(&#39;49E-FF01&#39;);
+		/*
+		 * collect() + flush() 테스트
+		 */
+		// 전송할 Payload 생성 및 적재 01
+		// const shuttle = new MyAppShuttle(); // 앞에서 선언해서 주석 처리
+		shuttle.setAction_id('view');
+		shuttle.setPage_id('49E-FF01');
 
-      RAKE.collect({
-      instanceAlias: &#39;Instance 별칭&#39;, // create()에서 설정한 instanceAlias
-      payload: shuttle.getImmutableJSONObject()
-    });
+		RAKE.collect({
+			instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+			payload: shuttle.getImmutableJSONObject()
+		});
 
-      // 전송할 Payload 생성 및 적재 02
-      shuttle.setAction_id(&#39;click&#39;);
-      shuttle.setPage_id(&#39;49E-FF02&#39;);
+		// 전송할 Payload 생성 및 적재 02
+		shuttle.setAction_id('click');
+		shuttle.setPage_id('49E-FF02');
 
-      RAKE.collect({
-      instanceAlias: &#39;Instance 별칭&#39;, // create()에서 설정한 instanceAlias
-      payload: shuttle.getImmutableJSONObject()
-    });
+		RAKE.collect({
+			instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+			payload: shuttle.getImmutableJSONObject()
+		});
 
-      // 전송
-      RAKE.flush({
-      instanceAlias: &#39;Instance 별칭&#39;, // create()에서 설정한 instanceAlias
-      timeoutAsMillis: 1000,
-      successCallback: function() { console.log(&#39;SUCCESS CALLBACK for Collect + Flush&#39;) },
-      failureCallback: function() { console.log(&#39;FAILURE CALLBACK for Collect + Flush&#39;) }
-    });
-    };
-      setTimeout(test, 1000);
+		// 전송
+		RAKE.flush({
+			instanceAlias: 'Instance 별칭', // create()에서 설정한 instanceAlias
+			timeoutAsMillis: 1000,
+			successCallback: function() { console.log('SUCCESS CALLBACK for Collect + Flush') },
+			failureCallback: function() { console.log('FAILURE CALLBACK for Collect + Flush') }
+		});
+	};
+	setTimeout(test, 1000);
 
-      const test_autoTrack = () =&gt; {
-      // Rake Instance 자동 생성 및 전송
-      RAKE.autoTrack({
-        instanceAlias: &#39;Instance 별칭&#39;,
-        token: &#39;Sentinel에서 발급받은 Token 값&#39;,
-        shuttle: MyAppShuttle, // Shuttle 생성자 명
-        isDMP: true,
-        uuid: true,
-        filters: [
-          { type: &#39;URL_INCLUDES_ALL&#39;, patterns: [&#39;localhost&#39;, &#39;index.html&#39;] }
-        ],
-        converters: [
-          // URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
-          { type: &#39;URL_QUERY_TO_PAYLOAD&#39;, from: &#39;userSession&#39;, to: &#39;_$body.user_session&#39; },
+	const test_autoTrack = () => {
+		// Rake Instance 자동 생성 및 전송
+		RAKE.autoTrack({
+			instanceAlias: 'Instance 별칭',
+			token: 'Sentinel에서 발급받은 Token 값',
+			shuttle: MyAppShuttle, // Shuttle 생성자 명
+			isDMP: true,
+			filters: [
+				{ type: 'URL_INCLUDES_ALL', patterns: ['localhost', 'index.html'] }
+			],
+			converters: [
+				// URL에서 QueryString 중 userSession 값을 추출하여 body의 user_session 필드에 삽입
+				{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userSession', to: '_$body.user_session' },
 
-          // URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
-          { type: &#39;URL_QUERY_TO_PAYLOAD&#39;, from: &#39;userId&#39;, to: &#39;user_id&#39; },
+				// URL에서 QueryString 중 userId 값을 추출하여 header의 user_id 필드에 삽입
+				{ type: 'URL_QUERY_TO_PAYLOAD', from: 'userId', to: 'user_id' },
 
-          // 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
-          { type: &#39;COOKIE_TO_PAYLOAD&#39;, from: &#39;cookieSession&#39;, to: &#39;cookie_session&#39; }
-        ],
-        timeoutAsMillis: 1000,
-        successCallback: function() { console.log(&#39;SUCCESS CALLBACK for AutoTrack&#39;) },
-        failureCallback: function() { console.log(&#39;FAILURE CALLBACK for AutoTrack&#39;) }
-      });
-    };
-      // setTimeout(test_autoTrack, 1000);
-    &lt;/script&gt;
-    &lt;h1&gt;RakeApp-Example&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-        </article>
+				// 브라우저 Cookie에서 cookieSession 값을 추출하여 header의 cookie_session 필드에 삽입
+				{ type: 'COOKIE_TO_PAYLOAD', from: 'cookieSession', to: 'cookie_session' }
+			],
+			timeoutAsMillis: 1000,
+			successCallback: function() { console.log('SUCCESS CALLBACK for AutoTrack') },
+			failureCallback: function() { console.log('FAILURE CALLBACK for AutoTrack') }
+		});
+	};
+	// setTimeout(test_autoTrack, 1000);
+&lt;/script>
+&lt;h1>RakeApp-Example&lt;/h1>
+&lt;/body>
+&lt;/html>
+</code></pre></article>
     </section>
 
 
+
+
+
+
+    
+    
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on Tue Sept 14 2021 15:38:30
-    GMT+0900 (GMT+09:00) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.7</a> on Wed Sep 15 2021 17:27:27 GMT+0900 (KST) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
 </footer>
 
 <script>prettyPrint();</script>
 <script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
+
 
 
 </body>
